@@ -1,4 +1,5 @@
- <div class="header_section">
+
+ <div class="header_section" >
          <div class="container-fluid bg-dark-menu">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="logo"><a href="index.html"><img src="{{asset('front/assets/images/logo.png')}}"></a></div>
@@ -46,14 +47,14 @@
          <div class="banner_section layout_padding">
             <div id="my_slider" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
-                {{-- @foreach ($sliders as $key => $item) --}}
-                  {{-- <div class="carousel-item {{$key == 0 ? 'active': ''}} "> --}}
+                @foreach ($sliders as $key => $item)
+                  <div class="carousel-item {{$key == 0 ? 'active': ''}} ">
                      <div class="container">
                         <div class="row">
                            <div class="col-sm-12">
                               <div class="banner_taital_main">
-                                    {{-- <h1 class="banner_taital">{{$item->title}}</h1> --}}
-                                    {{-- <p class="banner_text">{{$item->description}}</p> --}}
+                                    <h1 class="banner_taital">{{$item->title}}</h1>
+                                    <p class="banner_text">{{$item->description}}</p>
                                  <div class="btn_main">
                                     <div class="started_text active"><a href="#">Contact US</a></div>
                                     <div class="started_text"><a href="#">About Us</a></div>
@@ -63,40 +64,7 @@
                         </div>
                      </div>
                   </div>
-                {{-- @endforeach --}}
-
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <div class="banner_taital_main">
-                                 <h1 class="banner_taital">BUILDER CONSTRUCTION SERVICES</h1>
-                                 <p class="banner_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
-                                 <div class="btn_main">
-                                    <div class="started_text active"><a href="#">Contact US</a></div>
-                                    <div class="started_text"><a href="#">About Us</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <div class="banner_taital_main">
-                                 <h1 class="banner_taital">BUILDER CONSTRUCTION SERVICES</h1>
-                                 <p class="banner_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </p>
-                                 <div class="btn_main">
-                                    <div class="started_text active"><a href="#">Contact US</a></div>
-                                    <div class="started_text"><a href="#">About Us</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                @endforeach
                </div>
                <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
                <i class="fa fa-angle-left"></i>
@@ -107,4 +75,4 @@
             </div>
          </div>
         <!-- banner section end -->
-      </div>
+</div>

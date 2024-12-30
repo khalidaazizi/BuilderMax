@@ -7,7 +7,7 @@ use App\Http\Controllers\dashboard\SliderController;
 
 Route::get('/', [WelcomeController::class,'index'])->name('front.index');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('home');
 
