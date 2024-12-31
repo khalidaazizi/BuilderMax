@@ -113,12 +113,18 @@ class SliderController extends Controller
     }
 
     public function delete($id){
-        
-        Slider::onlyTrashed()->findOrfail($id)->forceDelete();
-        session::flash('success','successfully delete');
-        return redirect()->route('slider.trash');
-        
+        $slider = Slider::onlyTrashed()->findOrFail($id);
+        // return $slider;
+        $imagePath = 'uplode/slider/' . $slider->image;
+        if (!empty($slider->image) && file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+       $slider->forceDelete();
+       session::flash('success','successfully delete');
+       return redirect()->route('slider.trash');
+    
     }
+    
     public function restore($id){
        Slider::onlyTrashed()->findOrfail($id)->restore();
         session::flash('success','successfully restore');

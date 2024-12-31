@@ -44,16 +44,19 @@
                                 <td>{{Illuminate\Support\str::limit($item->description,30)}}</td>
                                 <td><img src="{{asset('uplode/slider/'.$item->image)}}" alt="image"></td>
                                 <td>
-                                    <form action="{{route('slider.restore', $item->id)}}" method="get">
+                                    {{-- restore   --}}
+                                    <form action="{{route('slider.restore', $item->id)}}" method="get" style="display: inline">
                                         @csrf
-                                        <input type="submit"  value="restore">
-                                   </form>
-                                </td>
-                                <td>
-                                    <form action="{{route('slider.delete',['id'=>$item->id])}}" method="POST">
+                                        <button type="submit" style="background: none; border: none; color: blue; cursor: pointer;"><i class="fas fa-undo"></i>
+                                        </button>
+                                   </form>  |
+                                   {{-- delete   --}}
+                                    <form action="{{route('slider.delete',$item->id)}}" method="POST" style="display: inline">
                                         @csrf
                                         @method('delete')
-                                       <input type="submit" value="delete">
+                                      <button type="submit" style="background: none; border: none; color: blue;  cursor: pointer;">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

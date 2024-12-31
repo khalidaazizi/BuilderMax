@@ -27,7 +27,7 @@ Route::get('/dashboard/admin', function () {
 Route::prefix('dashboard/admin')->group(function (){
     Route::resource('/slider', SliderController::class)->parameters(['slider' =>'id']);
     Route::get('/slider/trash/data',[ SliderController::class,'trash'])->name('slider.trash');
-    Route::delete('/slider/delete/data/{id}',[ SliderController::class,'delete'])->name('slider.delete');
+    Route::delete('/slider/delete/data/{id}',[SliderController::class,'delete'])->name('slider.delete');
     Route::get('/slider/restore/data/{id}',[ SliderController::class,'restore'])->name('slider.restore');
     
     
